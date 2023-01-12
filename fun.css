@@ -1,0 +1,47 @@
+:root {
+    --purple: rgb(74, 20, 140);
+    --light-purple: rgb(142, 36, 170);
+}
+
+body {
+    background-color: rgb(12, 12, 12);
+    height: 100vh;
+
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.link {
+    border-top: 1px solid rgba(258, 258, 258, 0.6);
+    color:aliceblue;
+    display: block;
+    font-family:'Impact';
+    font-size: clamp(3em, 9vw, 6em);
+    padding: clamp(0.24em, 1vw, 1em) clamp(1em, 3vw, 3em);
+    position:relative;
+    text-decoration: none;
+}
+
+.link:hover:before {
+    transition: width 420ms ease;
+    width: 100%;
+}
+
+.link:before {
+    background: linear-gradient(
+        to right,
+        transparent,
+        var(--purple) var(--light-purple-percent),
+        var(--light-purple)
+    );
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 0%;
+}
+.link:nth-child(3) {
+    border-bottom: 1px solid rgba(258, 258, 258, 0.6);
+}
